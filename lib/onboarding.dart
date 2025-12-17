@@ -40,7 +40,6 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Buttons at the bottom
                 Padding(
                   padding: const EdgeInsets.fromLTRB(40, 40, 40, 60),
                   child: Column(
@@ -73,15 +72,13 @@ class OnboardingScreen extends StatelessWidget {
           elevation: 5,
           shadowColor: Colors.black.withOpacity(0.4),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-              side: const BorderSide(color: Colors.white, width: 0.5)),
+            borderRadius: BorderRadius.circular(30),
+            side: const BorderSide(color: Colors.white, width: 0.5),
+          ),
         ),
         child: const Text(
           'Client',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
     );
@@ -104,10 +101,7 @@ class OnboardingScreen extends StatelessWidget {
         ),
         child: const Text(
           'Rider',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
     );
@@ -189,7 +183,7 @@ class OnboardingScreen extends StatelessWidget {
       _circle(top: 683, left: 0, size: 100),
       _circle(top: 808, left: 345, size: 100),
       _circle(top: 190, left: 188, size: 15),
-      _circle(top: 93, left: 263, size: 30),
+      _circle(top: 678, left: 263, size: 30),
 
       // Circle for the MORE button
       _circle(top: 817, left: 145, size: 20),
