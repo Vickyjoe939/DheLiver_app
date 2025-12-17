@@ -183,10 +183,10 @@ class OnboardingScreen extends StatelessWidget {
       _circle(top: 683, left: 0, size: 100),
       _circle(top: 808, left: 345, size: 100),
       _circle(top: 190, left: 188, size: 15),
-      _circle(top: 678, left: 263, size: 30),
+      _circle(top: 678, left: 263, size: 25),
 
       // Circle for the MORE button
-      _circle(top: 817, left: 145, size: 20),
+      _circle(top: 817, left: 145, size: 25),
     ];
   }
 
