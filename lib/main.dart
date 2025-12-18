@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // boxShadow: List.filled(length, fill)
                   boxShadow: [
                     BoxShadow(
-                      color: const Color.fromARGB(66, 152, 151, 151),
+                      color: const Color.fromARGB(66, 167, 166, 166),
                       offset: const Offset(5.0, 5.0),
                       blurRadius: 10.0,
                       spreadRadius: 2.0,
@@ -70,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Expanded(
                       child: TextField(
@@ -94,23 +95,105 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 41),
               Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                // crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Category", style: TextStyle(fontSize: 18)),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    spacing: 10.0, // horizontal gap between chips
                     children: [
                       TextButton(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all<Color>(
+                            orangeBlase,
+                          ),
+                        ),
                         onPressed: () => {},
                         child: Text(
                           "All",
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 14,
                             fontWeight: FontWeight.w400,
 
-                            backgroundColor: Color.fromARGB(252, 255, 106, 0),
+                            // backgroundColor: Color.fromARGB(252, 255, 106, 0),
                           ),
                         ),
+                      ),
+                      // SizedBox(width: 11),
+                      CustomButtom(
+                        title: "Document",
+                        icon: Icon(Icons.ac_unit),
+                      ),
+                      CustomButtom(
+                        title: "Electronics",
+                        icon: Icon(Icons.ac_unit),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    spacing: 10,
+                    children: [
+                      CustomButtom(title: "Fragile", icon: Icon(Icons.ac_unit)),
+                      CustomButtom(title: "More", icon: Icon(Icons.ac_unit)),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 41),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Riders near you!",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text("View all", style: orangeStyle),
+                    ],
+                  ),
+                  SizedBox(height: 5),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Avarter(img: "images/avater.png"),
+                      Avarter(img: "images/avater.png"),
+                      Avarter(img: "images/avater.png"),
+                      Avarter(img: "images/avater.png"),
+                      Avarter(img: "images/avater.png"),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 39),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Recent deliveries",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text("View all", style: orangeStyle),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Deliveries(
+                        title: "Rider kwav Lubem",
+                        time: TimeOfDay.now(),
+                        day: DayPeriod.am,
                       ),
                     ],
                   ),
@@ -131,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
         iconSize: 36,
         showUnselectedLabels: true,
         unselectedLabelStyle: TextStyle(color: Colors.black),
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: orangeBlase,
         unselectedItemColor: Colors.black,
         currentIndex: _selectedIndex,
         onTap: (index) => {setState(() => _selectedIndex = index)},
