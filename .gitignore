@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Miscellaneous
 *.class
 *.log
@@ -43,3 +44,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+=======
+# Object file
+*.o
+
+# Ada Library Information
+*.ali
+>>>>>>> 7c7af0dbef0689d1fa25127eb948bdfa1ad6db71
