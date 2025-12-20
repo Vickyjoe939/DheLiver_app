@@ -69,10 +69,29 @@ const deepGray = Color(0xff1e1e1e);
 const softWhite = Color(0xfff9f9f9);
 const mutedGray = Color(0xffa3a3a3);
 const deepTeal = Color(0xff005e5c);
+const deepGray10 = Color(0xff4e4e4e);
 
 const status = Color(0xff33ff00);
 
+const black50 = Color(0x00000080);
+const black80 = Color(0x000000CC);
+
 // styles
+
+List<BoxShadow> boxshadow = [
+  BoxShadow(
+    color: const Color.fromARGB(66, 167, 166, 166),
+    offset: const Offset(5.0, 5.0),
+    blurRadius: 10.0,
+    spreadRadius: 2.0,
+  ), //BoxShadow
+  BoxShadow(
+    color: Colors.white,
+    offset: const Offset(0.0, 0.0),
+    blurRadius: 0.0,
+    spreadRadius: 0.0,
+  ), //BoxShadow
+];
 
 const orangeStyle = TextStyle(
   color: orangeBlase,
@@ -83,27 +102,62 @@ const orangeStyle = TextStyle(
   decorationStyle: TextDecorationStyle.solid,
 );
 
+const map = null;
+
+class HeaderTitle extends StatelessWidget {
+  final String mytitle;
+
+  const HeaderTitle({super.key, required this.mytitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(Icons.arrow_circle_left),
+        SizedBox(width: 60),
+        Text(
+          mytitle,
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+        ),
+      ],
+    );
+  }
+}
+
 class Deliveries extends StatelessWidget {
   final String title;
   final TimeOfDay time;
   final DayPeriod day;
+  final String weekday;
+
   const Deliveries({
     super.key,
     required this.title,
+    required this.weekday,
     required this.time,
     required this.day,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title),
-          Column(children: [Text(day.name), Text(time.toString())]),
-        ],
-      ),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(title),
+            Column(
+              // mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(weekday),
+                Text(" ${time.hour}: ${time.minute} ${day.name.toUpperCase()}"),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 10),
+      ],
     );
   }
 }
