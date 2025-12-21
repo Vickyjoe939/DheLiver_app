@@ -73,6 +73,7 @@ const deepGray10 = Color(0xff4e4e4e);
 
 const status = Color(0xff33ff00);
 
+const black25 = Color(0x00000040);
 const black50 = Color(0x00000080);
 const black80 = Color(0x000000CC);
 

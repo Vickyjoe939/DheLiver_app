@@ -25,8 +25,12 @@ class Delivery extends StatelessWidget {
                 ),
               },
               style: TextButton.styleFrom(
+                minimumSize: Size.zero,
+                padding: EdgeInsets.symmetric(vertical: 12, horizontal: 1),
                 // side: BorderSide()
-
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusGeometry.all(Radius.zero),
+                ),
               ),
               child: const Row(
                 children: [
